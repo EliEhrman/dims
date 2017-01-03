@@ -5,8 +5,10 @@ import random
 
 # knn_large_fname = '/devlink/data/cifar/cifar.txt'
 # knn_small_fname = '/devlink/data/cifar/cifar_small.txt'
-knn_large_fname = '/devlink2/imagenet/llayer.txt'
-knn_small_fname = '/devlink2/imagenet/imgnet_small.txt'
+# knn_large_fname = '/devlink2/data/imagenet/llayer.txt'
+# knn_small_fname = '/devlink2/data/imagenet/imgnet_small.txt'
+knn_large_fname = '/devlink/data/metamath/setexpanded.txt'
+knn_small_fname = '/devlink/data/metamath/setshrunk.txt'
 b_fname_included = True
 csvfile = open(knn_large_fname, 'rt')
 reader = csv.reader(csvfile, delimiter=',')
@@ -31,9 +33,7 @@ mins = [min(col) for col in allcols]
 maxs = [max(col) for col in allcols]
 allvals = []
 for row in allrows:
-	vals = []
-	for icol, col in enumerate(row):
-		vals.append((col - mins[icol]) / (maxs[icol] - mins[icol]))
+	vals = [(col - mins[icol]) / (maxs[icol] - mins[icol]) if (maxs[icol] - mins[icol]) > 0.0 else 0.0 for icol, col in enumerate(row)]
 	sqrt = sum([x ** 2 for x in vals])
 	allvals.append([x / sqrt for x in vals])
 # print mins, maxs
