@@ -9,11 +9,11 @@ import matplotlib.pyplot as plt
 knn_large_fname = '/devlink2/data/imagenet/llayer.txt'
 knn_small_fname = '/devlink2/data/imagenet/imgnet_small.txt'
 b_fname_included = True
-same_factor = 1.0 # reduce distance when labels the same by this factor
-different_factor = 1.0
-num_iter_steps = 100000
+same_factor = 0.1 # reduce distance when labels the same by this factor
+different_factor = 10.0
+num_iter_steps = 1000000
 batch_size = 50
-output_size = 10 # how many properties to generate
+output_size = 80 # how many properties to generate
 
 
 csvfile = open(knn_large_fname, 'rt')
@@ -133,21 +133,4 @@ csvfile.close()
 print 'done'
 
 while True: plt.pause(0.5)
-
-# for step in range(10):
-# 	# fd = {	x: allvals[0:batch_size], x1: allvals[random.randint(1, batch_size)],
-# 	# 		x2: allvals[random.randint(1, batch_size)]}
-# 	r1 = random.randint(0, batch_size-1)
-# 	r2 = random.randint(0, batch_size-1)
-# 	fd = {	x: allvals[0:batch_size], rfirst: r1, rsecond: r2}
-# 	# onex_val = sess.run(x1, feed_dict=fd)
-# 	# x1, x2, y1, y2, distval = sess.run([x[rfirst], x[rsecond], y[rfirst], y[rsecond], err], feed_dict=fd)
-# 	print 'err change: ', errval1, errval2
-# xv, x1v = sess.run([x, x1], feed_dict=fd)
-# print 'err change: ', xv, x1v
-#
-# print 'done'
-
-
-
 
