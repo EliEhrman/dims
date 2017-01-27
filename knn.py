@@ -16,7 +16,7 @@ import os
 num_centroids = 2
 num_cluster_iters = 2
 num_clusters_to_get = 2
-num_ks = 2000
+num_ks = 200
 
 
 knn_in_fname = '/devlink2/data/imagenet/imgnet_small.txt'

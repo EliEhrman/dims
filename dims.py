@@ -6,15 +6,15 @@ import matplotlib.pyplot as plt
 
 # knn_large_fname = '/devlink/data/cifar/cifar.txt'
 # knn_small_fname = '/devlink/data/cifar/cifar_small.txt'
-# knn_large_fname = '/devlink2/data/imagenet/llayer.txt'
-# knn_small_fname = '/devlink2/data/imagenet/imgnet_small.txt'
-knn_large_fname = '/devlink/data/metamath/setexpanded.txt'
-knn_small_fname = '/devlink/data/metamath/setshrunk.txt'
+knn_large_fname = '/devlink2/data/imagenet/llayer.txt'
+knn_small_fname = '/devlink2/data/imagenet/imgnet_small.txt'
+# knn_large_fname = '/devlink/data/metamath/setexpanded.txt'
+# knn_small_fname = '/devlink/data/metamath/setshrunk.txt'
 
 b_fname_included = True
-num_steps = 100000
-batch_size = 50
-output_size = 80
+num_steps = 1000000
+batch_size = 30
+output_size = 40
 
 csvfile = open(knn_large_fname, 'rt')
 reader = csv.reader(csvfile, delimiter=',')
